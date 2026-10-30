@@ -6,7 +6,7 @@ Repositório dos notebooks de apoio à pesquisa sobre observância dos impedimen
 **Orientador:** Prof. Dr. Remis Balaniuk  
 **Programa:** Mestrado em Governança, Tecnologia e Inovação — Universidade Católica de Brasília, 2026.
 
-Este guia relaciona os **43 notebooks** disponíveis — **42 na raiz e 1 em `notebooks/quilombolas/`** — aos procedimentos e resultados da dissertação. O acervo contém preparação de bases, cruzamentos, relatórios V2, complementos, auditorias e versões anteriores. Não representa uma sequência de 43 arquivos que devam ser executados integralmente.
+Este guia relaciona os **42 notebooks** disponíveis na raiz aos procedimentos e resultados da dissertação. O acervo contém preparação de bases, cruzamentos, relatórios V2, complementos, auditorias e versões anteriores. Não representa uma sequência de 42 arquivos que devam ser executados integralmente.
 
 ## Referência documental e alcance da conferência
 
@@ -50,7 +50,7 @@ O cálculo espacial por geometria distinta reduz processamento; ele **não autor
 
 As rotinas de interseção usam `EPSG:4326` para as geometrias de origem e `EPSG:5880` para cálculo de áreas, convertidas de m² para hectares. Reparo geométrico, auditoria da geometria original e ajuste exclusivo de desenho são procedimentos distintos.
 
-## Inventário dos 43 notebooks
+## Inventário dos 42 notebooks
 
 As tabelas abaixo indicam a função observada de cada arquivo e sua relação com o texto. “Histórico” designa uma abordagem anterior ou alternativa identificada no código; não significa comprovação de que o arquivo jamais tenha sido usado.
 
@@ -130,7 +130,6 @@ As tabelas abaixo indicam a função observada de cada arquivo e sua relação c
 | [notebook_unificado_assentamentos_id_gleba2.ipynb](notebook_unificado_assentamentos_id_gleba2.ipynb) | Histórico de 5.5.4 | Relatório que deduplica ocorrências por geometria/assentamento; não usar suas contagens como equivalentes às da V2. |
 | [notebook_unificado_sicar_suspensos_id_gleba2.ipynb](notebook_unificado_sicar_suspensos_id_gleba2.ipynb) | Histórico de 5.5.7 | Relatório que deduplica ocorrências por geometria/cadastro; distinto da V2 sem deduplicação. |
 | [notebook_unificado_unidades_conservacao_id_gleba2.ipynb](notebook_unificado_unidades_conservacao_id_gleba2.ipynb) | Histórico de 5.5.6 | Relatório deduplicado por geometria/unidade, com saídas parciais; não corresponde à síntese final UC/ZA. |
-| [notebooks/quilombolas/Relatorio_Unificado_SICOR_Quilombolas_id_gleba2.ipynb](notebooks/quilombolas/Relatorio_Unificado_SICOR_Quilombolas_id_gleba2.ipynb) | Histórico de 5.5.2 | Cópia recuperada do anexo `Texto colado(4).txt`. Aponta para CSV único, registra 303 linhas e erro de identificação do período; não substitui os 368 registros expandidos da dissertação. |
 
 ## Totais de referência da dissertação
 
@@ -209,7 +208,7 @@ Esta seção registra diferenças observáveis entre o acervo e o texto de refer
 | --- | --- | --- |
 | Seleção territorial no Base01 | `CRITERIO_ESPACIAL = "within"`; o texto das seções 4.3 e 5.2.2 descreve glebas total ou parcialmente inseridas. O arquivo não tem saídas salvas. | Confirmar o predicado efetivamente utilizado na geração dos arquivos anuais. Não afirmar que a configuração salva reproduz a inclusão parcial nem trocar o parâmetro silenciosamente. |
 | Filtro do SICAR | O notebook de interseção compara `ind_status` normalizado com `SUSPENSO`. Não há conversão de `SU` para esse texto. A dissertação e saídas salvas do relatório V2 apresentam `SU`. | Conferir os valores reais da camada e recuperar/documentar a configuração que gerou as interseções. Uma camada codificada apenas como `SU` não passa pelo filtro atual. |
-| Relatórios V2 ausentes | Há relatórios unificados V2 de TI, assentamentos, SICAR e UC. Não foram encontrados os equivalentes V2 de quilombolas, florestas públicas e embargos, embora os complementos usem produtos dessas versões. | O acervo permite consultar os complementos e os cruzamentos, mas ainda não contém todos os geradores intermediários de relatórios mencionados nas dependências. O relatório antigo de quilombolas não supre essa falta. |
+| Relatórios V2 ausentes | Há relatórios unificados V2 de TI, assentamentos, SICAR e UC. Não foram encontrados os equivalentes V2 de quilombolas, florestas públicas e embargos, embora os complementos usem produtos dessas versões. | O acervo permite consultar os complementos e os cruzamentos, mas ainda não contém todos os geradores intermediários de relatórios mencionados nas dependências. |
 | UC e ZA agregadas nas rotinas anteriores | O unificado V2 e os dois complementos de conservação trabalham com 18.617 linhas combinadas. O complemento com `(1)` ajusta o desenho de coleções geométricas, mas não separa os recortes. | Para a síntese final, consultar `Corrigir_Resultados_UC_ZA_Cerrado.ipynb`: 18.493 UC e 124 ZA. Não apresentar 18.617 como total de linhas apenas no interior das UCs. |
 | Texto antigo no Base02 | A introdução ainda apresenta 377.465 linhas; o código calcula os totais a partir dos arquivos e as saídas registram 480.679. | Usar a validação dos arquivos efetivos e documentar a desatualização da introdução. |
 | Relatórios deduplicados | Os relatórios antigos reduzem ocorrências por geometria/unidade; a dissertação final preserva linhas expandidas. | Não substituir tabelas V2 por resultados deduplicados nem misturar os denominadores. |
@@ -218,7 +217,7 @@ Esta seção registra diferenças observáveis entre o acervo e o texto de refer
 
 ### Erros preservados nas cópias
 
-Foram identificados outputs de erro em **6 notebooks**. São registros históricos das células, não diagnósticos de uma nova execução. Em particular, a auditoria de repetições também contém resultados posteriores compatíveis com a dissertação.
+Foram identificados outputs de erro em **5 notebooks**. São registros históricos das células, não diagnósticos de uma nova execução. Em particular, a auditoria de repetições também contém resultados posteriores compatíveis com a dissertação.
 
 | Notebook | Erro salvo |
 | --- | --- |
@@ -227,9 +226,8 @@ Foram identificados outputs de erro em **6 notebooks**. São registros históric
 | `Unidades_Conservacao_5_5_6_Tabelas_e_Mapas.ipynb` | Geometria vazia ou não poligonal em `territorio=607`. |
 | `notebook_unificado_terras_indigenas_id_gleba2.ipynb` | Erro de obtenção de arquivo pelo `geobr`. |
 | `notebook_unificado_terras_indigenas_id_gleba2 (2).ipynb` | `KeyError: index_right`. |
-| `notebooks/quilombolas/Relatorio_Unificado_SICOR_Quilombolas_id_gleba2.ipynb` | Coluna do período não identificada. |
 
-**41 arquivos contêm alguma saída salva**; isso pode significar apenas instalação ou montagem do Drive. **Base01** e o modelo genérico **Auditoria_Geometrias_Invalidas_por_Ano** não contêm saídas. Nenhuma dessas classificações certifica execução integral ou uso na versão final.
+**40 arquivos contêm alguma saída salva**; isso pode significar apenas instalação ou montagem do Drive. **Base01** e o modelo genérico **Auditoria_Geometrias_Invalidas_por_Ano** não contêm saídas. Nenhuma dessas classificações certifica execução integral ou uso na versão final.
 
 ## Alcance dos achados
 
